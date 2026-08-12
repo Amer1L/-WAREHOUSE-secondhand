@@ -1,4 +1,4 @@
-var API_URL = "https://script.google.com/macros/s/AKfycbzH5RE3yCicqLnCi9CcjZwCiavaodg0zrc_WXitpEhEPQ5-nWz4HPQeq0eYfV1YYbnM/exec";
+var API_URL = "https://script.google.com/macros/s/AKfycbwBm15wqJwVnJiNqKsh6uMwSH08VkQAbCWu-smjoHJSLqdoQvFb-n_vb0wUOcFHTON_/exec";
 
 var urlParams = new URLSearchParams(window.location.search);
 var selectedCategory = urlParams.get("category") || "all";
