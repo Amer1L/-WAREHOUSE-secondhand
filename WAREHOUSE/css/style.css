@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #0b0b0b;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* HEADER */
+.header {
+    height: 70px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #292929;
+    position: sticky;
+    top: 0;
+    background: rgba(11, 11, 11, 0.9);
+    backdrop-filter: blur(10px);
+    z-index: 10;
+}
+
+.logo {
+    color: hotpink;
+    font-size: 17px;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    transition: color 0.4s ease;
+}
+
+.logo:hover {
+    color: #ffffff;
+}
+
+.cart-button {
+    padding: 10px 14px;
+    border: 1px solid #292929;
+    border-radius: 5px;
+    background: #151515;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: border-color 0.2s;
+}
+
+.cart-button:hover {
+    border-color: hotpink;
+}
+
+/* MAIN & HERO */
+main {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px 100px;
+}
+
+.hero {
+    padding: 80px 0 40px;
+}
+
+.small-text {
+    margin: 0;
+    color: #888888;
+    font-size: 15px;
+    letter-spacing: 5px;
+    font-weight: 700;
+}
+
+.hero h1 {
+    margin: 15px 0 0;
+    font-size: clamp(40px, 11vw, 110px);
+    line-height: 0.85;
+    letter-spacing: 0px;
+    font-weight: 700;
+}
+
+.hero h1 span {
+    display: block;
+    margin: 12px 0 0;
+    font-size: clamp(30px, 8vw, 60px);
+    line-height: 0.8;
+    letter-spacing: -1px;
+    font-weight: 700;
+}
+
+.description {
+    margin-top: 20px;
+    color: #888888;
+    font-size: 14px;
+}
+
+/* CATEGORIES */
+.catalog-header h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.category {
+    display: inline-block;
+    background-color: #141414;
+    color: #ffffff;
+    border: 1px solid #282828;
+    padding: 12px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+.category:hover {
+    background-color: #1f1f1f;
+    border-color: hotpink;
+    transform: translateY(-2px);
+}
+
+.z {
+    transition: color 0.2s ease;
+    cursor: default;
+}
+
+.z:hover {
+    color: hotpink;
+}
+
+@media (max-width: 600px) {
+    main {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .hero {
+        padding-top: 40px;
+    }
+}
