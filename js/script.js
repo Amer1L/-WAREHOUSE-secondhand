@@ -21,6 +21,8 @@ categories.forEach(category => {
 
 });
 
+
+
 // Авто-подсветка выбранной категории
 document.addEventListener("DOMContentLoaded", function() {
     var catButtons = document.querySelectorAll(".category");
