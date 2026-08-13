@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
         })
         .catch(function(err) {
             console.error("Ошибка загрузки:", err);
-            productsContainer.innerHTML = "<p style='color: hotpink; text-align: center; width: 100%; grid-column: 1/-1;'>Ошибка загрузки товаров.</p>";
+            productsContainer.innerHTML = "<p style='color: rgb(255, 0, 51); text-align: center; width: 100%; grid-column: 1/-1;'>Ошибка загрузки товаров, перезайдите на страницу.</p>";
         });
 
     setupModalEvents();
