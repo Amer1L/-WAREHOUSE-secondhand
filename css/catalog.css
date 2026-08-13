@@ -32,10 +32,23 @@ body {
     text-decoration: none;
     letter-spacing: 1.5px;
     transition: color 0.4s ease;
+    display: inline-flex;    /* Выравнивает текст и картинку строго по одной линии */
+    align-items: center;     /* Центрирует картинку по вертикали относительно текста */
+    gap: 12px;                /* Делает аккуратный отступ между текстом и картинкой */
+    text-decoration: none;   /* Убирает подчеркивание у ссылки */
 }
+
 
 .logo:hover {
     color: yellowgreen;
+}
+
+
+
+.pic-logo{
+    height: 40px;             /* Картинка автоматически станет высотой с текущий размер шрифта текста */
+    width: auto;             /* Пропорции картинки не исказятся */
+    object-fit: contain;
 }
 
 /* Кнопка корзины в шапке */

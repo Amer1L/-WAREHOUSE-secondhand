@@ -39,8 +39,21 @@ body {
     
 }
 
-.logo:hover {
+.text-logo:hover {
     color: #ffffff;
+}
+
+.text-logo{
+    display: inline-flex;    /* Выравнивает текст и картинку строго по одной линии */
+    align-items: center;     /* Центрирует картинку по вертикали относительно текста */
+    gap: 12px;                /* Делает аккуратный отступ между текстом и картинкой */
+    text-decoration: none;   /* Убирает подчеркивание у ссылки */
+}
+
+.pic-logo{
+    height: 40px;             /* Картинка автоматически станет высотой с текущий размер шрифта текста */
+    width: auto;             /* Пропорции картинки не исказятся */
+    object-fit: contain;
 }
 
 .cart-button {
