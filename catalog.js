@@ -32,13 +32,24 @@
         fetch(API_URL)
             .then(function(res) { return res.json(); })
             .then(function(data) {
+                console.log("ДАННЫЕ ИЗ ТАБРИКИ:", data);
+            
                 allProducts = filterValidProducts(data);
             
-                // Показываем на сайте только товары со статусом "В наличии"
                 var availableProducts = allProducts.filter(function(product) {
+                    console.log(
+                        "Товар:",
+                        product["НАЗВАНИЕ"],
+                        "| СТАТУС:",
+                        product["СТАТУС"]
+                    );
+                
                     var status = String(product["СТАТУС"] || "").trim().toLowerCase();
+                
                     return status === "В наличии";
                 });
+            
+                console.log("ТОВАРОВ В НАЛИЧИИ:", availableProducts);
             
                 renderProducts(availableProducts, productsContainer);
             })
