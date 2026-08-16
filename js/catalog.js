@@ -1,4 +1,4 @@
-    var API_URL = "https://script.google.com/macros/s/AKfycbwhGM-BwwFMycDlyKLuoF_Vi00MxfO7sapkjmUXbgDi0A7VGsoeMweVCCuVSNLtJq7A/exec";
+    var API_URL = "https://script.google.com/macros/s/AKfycbyojAy2H8xpT74OARTBWDv2SYUDINOWjzkRFzacfWIxE2AgY46AcFrnPItSqZWKls-D/exec";
 
     var urlParams = new URLSearchParams(window.location.search);
     var selectedCategory = urlParams.get("category") || "all";
@@ -46,7 +46,7 @@
                 
                     var status = String(product["СТАТУС"] || "").trim().toLowerCase();
                 
-                    return status === "В наличии";
+                    return status === "в наличии";
                 });
             
                 console.log("ТОВАРОВ В НАЛИЧИИ:", availableProducts);
