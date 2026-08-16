@@ -16,7 +16,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #292929;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.178);
     position: sticky;
     top: 0;
     background: rgba(87, 194, 45, 0);
@@ -569,6 +569,96 @@ main {
     font-size: 12px;
     color: #888;
     margin: 0 0 7px 4px;
+}
+
+/* СТРАНИЦА СОГЛАСИЯ НА ОБРАБОТКУ ПЕРСОНАЛЬНЫХ ДАННЫХ */
+
+.consent-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+}
+
+.consent-container {
+    background-color: rgba(20, 20, 20, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid #282828;
+    border-radius: 12px;
+    padding: 30px;
+}
+
+.consent-container h1 {
+    font-size: 1.7rem;
+    margin: 0 0 25px;
+    text-transform: uppercase;
+}
+
+.consent-container h2 {
+    font-size: 1.1rem;
+    margin: 25px 0 10px;
+    color: yellowgreen;
+}
+
+.consent-container p,
+.consent-container li {
+    color: #bbb;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.consent-container ul {
+    padding-left: 20px;
+}
+
+.consent-back {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: yellowgreen;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.consent-back:hover {
+    color: #fff;
+}
+
+.consent-link {
+    color: yellowgreen;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.consent-link:hover {
+    color: #fff;
+}
+
+.consent-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    margin: 2px 0 12px 0;
+    color: #888;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+.consent-label input {
+    margin-top: 2px;
+    accent-color: yellowgreen;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.consent-label a {
+    color: yellowgreen;
+    text-decoration: none;
+}
+
+.consent-label a:hover {
+    text-decoration: underline;
 }
 
 @media (max-width: 600px) {

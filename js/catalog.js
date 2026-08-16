@@ -266,6 +266,13 @@
             return;
         }
 
+        var consent = document.getElementById("personal-data-consent");
+
+        if (!consent || !consent.checked) {
+            alert("Пожалуйста, подтвердите согласие на обработку персональных данных.");
+        return;
+        }
+
         // Собираем данные
         var phone = document.getElementById("cart-phone").value.trim();
         var tg = document.getElementById("cart-tg").value.trim();

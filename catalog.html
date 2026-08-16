@@ -17,7 +17,7 @@
         background-color: #0d0d0d;
     }
     </style>
-    <link rel="icon" type="image/png" href="logohtml.png">
+    <link rel="icon" type="image/png" href="warehouse.png">
 </head>
 
 <body>
@@ -123,6 +123,14 @@
                     </select>
 
                     <textarea id="cart-comment" placeholder="Комментарий к заказу (необязательно)" class="cart-input cart-textarea"></textarea>
+
+                    <label class="consent-label">
+                        <input type="checkbox" id="personal-data-consent">
+                        <span>
+                            Я ознакомился(ась) и согласен(на) с
+                            <a href="consent.html" target="_blank">условиями обработки персональных данных</a>
+                        </span>
+                    </label>
 
                     <button id="checkout-btn" onclick="checkoutOrder()" class="modal-buy-btn checkout-btn">ОФОРМИТЬ ЗАКАЗ</button>
                 </div>

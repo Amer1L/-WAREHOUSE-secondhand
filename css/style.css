@@ -10,7 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #292929;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.178);
     position: sticky;
     top: 0;
     background: rgba(87, 194, 45, 0);
