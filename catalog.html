@@ -109,21 +109,17 @@
                 </div>
 
                 <div class="cart-form">
-                    <input type="text" id="cart-fio" placeholder="ФИО получателя" class="cart-input" required>
                     <input type="tel" id="cart-phone" placeholder="Номер телефона" class="cart-input" required>
                     <input type="text" id="cart-tg" placeholder="Telegram (@username)" class="cart-input" required>
 
-                    <select id="cart-delivery" class="cart-input" onchange="toggleAddressField()">
-                        <option value="Самовывоз">Самовывоз</option>
-                        <option value="Доставка">Доставка</option>
-                    </select>
 
-                    <input type="text" id="cart-address" placeholder="Адрес доставки" class="cart-input" style="display:none;">
-
+                    <input type="text" id="cart-address" placeholder="Адрес доставки" class="cart-input" required>
+                    
+                    <p class="payment-note">(Оплата производится после получения и проверки заказа)</p>
                     <select id="cart-payment" class="cart-input">
                         <option value="Перевод">Перевод на карту</option>
                         <option value="Наличные">Наличные при получении</option>
-                        <option value="СБП">СБП</option>
+                        <option value="СБП QR/ссылка">СБП</option>
                     </select>
 
                     <textarea id="cart-comment" placeholder="Комментарий к заказу (необязательно)" class="cart-input cart-textarea"></textarea>

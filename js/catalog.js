@@ -267,35 +267,27 @@
         }
 
         // Собираем данные
-        var fio = document.getElementById("cart-fio").value.trim();
         var phone = document.getElementById("cart-phone").value.trim();
         var tg = document.getElementById("cart-tg").value.trim();
-        var delivery = document.getElementById("cart-delivery").value;
         var address = document.getElementById("cart-address").value.trim();
         var payment = document.getElementById("cart-payment").value;
         var comment = document.getElementById("cart-comment").value.trim();
 
         // Валидация
-        if (!fio || !phone || !tg) {
-            alert("Пожалуйста, заполните ФИО, телефон и Telegram!");
+        if (!address || !phone || !tg) {
+            alert("Пожалуйста, телефон, Telegram и адрес доставки🙏");
             return;
         }
 
-        if (delivery === "Доставка" && !address) {
-            alert("Пожалуйста, укажите адрес доставки!");
-            return;
-        }
 
         var checkoutBtn = document.getElementById("checkout-btn");
         checkoutBtn.disabled = true;
         checkoutBtn.innerText = "Отправка...";
 
         var payload = {
-            fio: fio,
             phone: phone,
             tg: tg,
-            delivery: delivery,
-            address: (delivery === "Доставка" ? address : "---"),
+            address: address,
             payment: payment,
             comment: comment || "Нет комментария",
             items: cart
@@ -336,10 +328,4 @@
         if (cartTrigger) cartTrigger.onclick = openCartModal;
         if (cartCloseBtn) cartCloseBtn.onclick = function() { cartModal.classList.remove("active"); };
         if (cartModal) cartModal.onclick = function(e) { if (e.target === cartModal) cartModal.classList.remove("active"); };
-    }
-
-    function toggleAddressField() {
-        var delivery = document.getElementById("cart-delivery").value;
-        var addressInput = document.getElementById("cart-address");
-        addressInput.style.display = (delivery === "Доставка") ? "block" : "none";
     }
