@@ -158,6 +158,60 @@
         }
     }
 
+    function openFullscreenImage() {
+        var fullscreenModal = document.getElementById("fullscreen-image-modal");
+        var fullscreenImg = document.getElementById("fullscreen-img");
+        var fullscreenCounter = document.getElementById("fullscreen-counter");
+    
+        if (!fullscreenModal || !fullscreenImg) return;
+        if (currentProductImages.length === 0) return;
+    
+        // Сначала показываем окно
+        fullscreenModal.classList.add("active");
+    
+        // Сбрасываем старые размеры изображения
+        fullscreenImg.style.width = "100%";
+        fullscreenImg.style.height = "100%";
+    
+        // Загружаем новую фотографию
+        fullscreenImg.src = currentProductImages[currentImageIndex];
+    
+        if (fullscreenCounter) {
+            fullscreenCounter.innerText =
+                (currentImageIndex + 1) + " / " + currentProductImages.length;
+        }
+    }
+
+    function closeFullscreenImage() {
+        var fullscreenModal = document.getElementById("fullscreen-image-modal");
+
+        if (fullscreenModal) {
+            fullscreenModal.classList.remove("active");
+        }
+    }
+
+    function fullscreenPrevImage() {
+        if (currentProductImages.length <= 1) return;
+
+        currentImageIndex =
+            (currentImageIndex - 1 + currentProductImages.length) %
+            currentProductImages.length;
+
+        updateModalImage();
+        openFullscreenImage();
+    }
+
+    function fullscreenNextImage() {
+        if (currentProductImages.length <= 1) return;
+
+        currentImageIndex =
+            (currentImageIndex + 1) %
+            currentProductImages.length;
+
+        updateModalImage();
+        openFullscreenImage();
+    }
+
     function prevImage() {
         if (currentProductImages.length <= 1) return;
         currentImageIndex = (currentImageIndex - 1 + currentProductImages.length) % currentProductImages.length;
@@ -330,9 +384,32 @@
 
         var cartModal = document.getElementById("cart-modal");
         var cartCloseBtn = document.getElementById("cart-close");
+        var modalImg = document.getElementById("modal-img");
+
+        if (modalImg) {
+            modalImg.style.cursor = "zoom-in";
+            modalImg.onclick = openFullscreenImage;
+        }
         var cartTrigger = document.getElementById("cart-trigger");
 
         if (cartTrigger) cartTrigger.onclick = openCartModal;
         if (cartCloseBtn) cartCloseBtn.onclick = function() { cartModal.classList.remove("active"); };
         if (cartModal) cartModal.onclick = function(e) { if (e.target === cartModal) cartModal.classList.remove("active"); };
+
+        var fullscreenModal = document.getElementById("fullscreen-image-modal");
+        var fullscreenClose = document.getElementById("fullscreen-close");
+            
+        if (fullscreenClose) {
+            fullscreenClose.onclick = closeFullscreenImage;
+        }
+        
+        if (fullscreenModal) {
+            fullscreenModal.onclick = function(e) {
+                if (e.target === fullscreenModal) {
+                    closeFullscreenImage();
+                }
+            };
+        }
     }
+
+    

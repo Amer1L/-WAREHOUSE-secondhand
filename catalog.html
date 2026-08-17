@@ -138,6 +138,19 @@
         </div>
     </div>
 
+        <!-- Полноэкранный просмотр фотографии -->
+    <div id="fullscreen-image-modal" class="fullscreen-image-modal">
+        <button id="fullscreen-close" class="fullscreen-close">&times;</button>
+    
+        <button class="fullscreen-arrow fullscreen-prev" onclick="fullscreenPrevImage()">&#10094;</button>
+    
+        <img id="fullscreen-img" src="" alt="Фото товара">
+    
+        <button class="fullscreen-arrow fullscreen-next" onclick="fullscreenNextImage()">&#10095;</button>
+    
+        <span id="fullscreen-counter" class="fullscreen-counter">1 / 1</span>
+    </div>
+
     <script src="js/catalog.js"></script>
 </body>
 </html>
