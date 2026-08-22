@@ -9,9 +9,89 @@
     var currentProductImages = [];
 
     // Ссылка-заглушка, если картинка не загрузится
-    var FALLBACK_IMAGE = "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=500";
+    var FALLBACK_IMAGE = "error.png";
 
     document.addEventListener("DOMContentLoaded", function() {
+        //______________________________________________________//
+
+        /*var tgInput = document.getElementById("cart-tg");
+
+        if (tgInput) {
+            tgInput.addEventListener("input", function() {
+                var value = this.value;
+            
+                // Убираем всё, кроме английских букв, цифр и _
+                value = value.replace(/[^a-zA-Z0-9_]/g, "");
+            
+                // @ всегда остаётся в начале
+                this.value = "@" + value;
+            });
+        
+            tgInput.addEventListener("focus", function() {
+                // Если каким-то образом @ исчез — возвращаем
+                if (!this.value.startsWith("@")) {
+                    this.value = "@" + this.value;
+                }
+            
+                // Ставим курсор после @
+                if (this.selectionStart === 0) {
+                    this.setSelectionRange(1, 1);
+                }
+            });
+
+        }*/
+
+
+
+        var tgInput = document.getElementById("cart-tg");
+        var tgPlaceholder = document.getElementById("tg-placeholder");
+
+        if (tgInput) {
+        
+            function updateTgPlaceholder() {
+                if (tgInput.value === "@") {
+                    tgPlaceholder.style.display = "block";
+                } else {
+                    tgPlaceholder.style.display = "none";
+                }
+            }
+        
+            tgInput.addEventListener("input", function() {
+                var value = this.value;
+            
+                value = value.replace(/[^a-zA-Z0-9_]/g, "");
+            
+                this.value = "@" + value;
+            
+                updateTgPlaceholder();
+            });
+        
+            tgInput.addEventListener("focus", function() {
+                if (!this.value.startsWith("@")) {
+                    this.value = "@" + this.value;
+                }
+            
+                if (this.selectionStart === 0) {
+                    this.setSelectionRange(1, 1);
+                }
+            
+                updateTgPlaceholder();
+            });
+        
+            updateTgPlaceholder();
+        }
+
+        //_______________________________________________________//
+
+
+        var phoneInput = document.getElementById("cart-phone");
+
+        if (phoneInput) {
+            phoneInput.addEventListener("input", function() {
+                this.value = this.value.replace(/\D/g, "");
+            });
+        }
+
         updateCartUI();
 
         var productsContainer = document.querySelector("#products");

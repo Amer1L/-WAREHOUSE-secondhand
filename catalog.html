@@ -109,8 +109,13 @@
                 </div>
 
                 <div class="cart-form">
-                    <input type="tel" id="cart-phone" placeholder="Номер телефона" class="cart-input" required>
-                    <input type="text" id="cart-tg" placeholder="Telegram (@username)" class="cart-input" required>
+                    <input type="tel" id="cart-phone" placeholder="Номер телефона" class="cart-input" inputmode="numeric" required>
+                    <!--1<input type="text" id="cart-tg" placeholder="Telegram (@username)" class="cart-input" required>
+                    2<input type="text" id="cart-tg" value="@" class="cart-input" required>-->
+                    <div class="telegram-input-wrap">
+                        <input type="text" id="cart-tg" value="@" class="cart-input telegram-input" required>
+                        <span id="tg-placeholder" class="tg-placeholder">(username)</span>
+                    </div>
 
 
                     <input type="text" id="cart-address" placeholder="Адрес доставки" class="cart-input" required>
